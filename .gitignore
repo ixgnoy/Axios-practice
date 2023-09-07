@@ -1,0 +1,10 @@
+# Ignore the node_modules directory
+/node_modules/
+
+# Ignore the solution.ejs file
+/views/solution.ejs
+
+# Ignore the solution.js file
+/solution.js
+
+/package-lock.json
