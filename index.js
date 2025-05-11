@@ -31,7 +31,7 @@ app.post("/", async (req, res) => {
     const type=req.body.type;
     const participants = req.body.participants;
     const response = await axios.get(
-      https://bored-api.appbrewery.com/filter?type=${type}&participants=${participants}
+      `https://bored-api.appbrewery.com/filter?type=${type}&participants=${participants}`
     );
     const result=response.data;
     console.log(result);
