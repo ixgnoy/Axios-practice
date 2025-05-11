@@ -30,7 +30,7 @@ app.post("/", async (req, res) => {
     console.log(req.body);
     const type=req.body.type;
     const participants = req.body.participants;
-    const response = await acious.get(
+    const response = await axios.get(
       `https://bored-api.appbrewery.com/filter?type=${type}&participants=${participants}`
     );
     const result=response.data;
