@@ -44,11 +44,11 @@
   </article>
 <% } %>
 
-<% if (error) { %>
-  <div id="tag-error" class="tag-error">
-    <%= error %>
-  </div>
-<% } %>
+  <% if (typeof error !== "undefined" && error) { %>
+    <div id="tag-error" class="tag-error">
+  <%= error %>
+    </div>
+  <% } %>
 
     </section>
   </div>
