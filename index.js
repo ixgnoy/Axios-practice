@@ -36,9 +36,18 @@ app.post("/", async (req, res) => {
     const result=response.data;
     console.log(result);
     res.render("index.ejs", {
-      data: result[Math.floor(Math.random()*result.length)],
-    });
-  }catch(error){
+      if (result.length > 0) {
+          res.render("index.ejs", {
+              data: result[Math.floor(Math.random() * result.length)],
+          });
+      } else {
+          res.render("index.ejs", {
+              error: "No activities match your criteria.",
+          });
+      }
+
+      });
+      }catch(error){
     console.error("Failed to make request:", error.message);
     res.render("index.ejs", {
       error: "No activities that match your criteria.",
@@ -47,5 +56,5 @@ app.post("/", async (req, res) => {
 });
 
 app.listen(port, () => {
-  console.log(Server running on port: ${port});
+  console.log(`Server running on port: ${port}`);
 });
